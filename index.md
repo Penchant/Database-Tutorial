@@ -20,9 +20,10 @@ Let's make some selections from an example superhero database.
 
 Problem: Select each unique power rating from the hero table.
 
-
-Solution:
->! SELECT DISTINCT PowerRating FROM Hero
+<details>
+<summary> Solution: </summary>
+ SELECT DISTINCT PowerRating FROM Hero
+</details>
 
 Problem: Select all heros with a power rating of 1
 
