@@ -75,6 +75,7 @@ Problem: Select the sum of all hero power ratings
 <summary>Solution:</summary>
  SELECT SUM(PowerRating) FROM Hero
 </details>
+
 ## Statement Types
 
 ### Select Distinct
