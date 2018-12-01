@@ -16,7 +16,7 @@ To add the files to the path the user must go to the control panel, locate the '
 
 Let's make some selections from an example superhero database.
 
- ![Superhero Table]()
+ ![Superhero Table](table.png)
 
 Problem: Select each unique power rating from the hero table.
 
@@ -26,43 +26,52 @@ Problem: Select each unique power rating from the hero table.
 </details>
 
 Problem: Select all heros with a power rating of 1
-
 <details>
 <summmary> Solution: </summary>
 `SELECT Name FROM Hero WHERE PowerRating = 1;`
-</details>
+
 We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN, and BETWEEN statements.
+</details>
 
 Problem: Select all heros in order of their respective power ratings
-
-Solution:
-> SELECT * FROM Hero ORDER BY PowerRating;
-
+<details>
+<summary>Solution:
+ `SELECT * FROM Hero ORDER BY PowerRating;`
+</details>
 Problem: select the top 3 heros from the table
 
-Solution:
-> SELECT TOP 3 * FROM Hero
+<details>
+<summary>Solution:</summary>
+ `SELECT TOP 3 * FROM Hero`
+</details>
 
 Problem: Select the name of the hero with the greatest power rating
 
-Solution:
-> SELECT Name FROM Hero WHERE PowerRating = (SELECT MAX(PowerRating) FROM Hero);
+<details>
+<summary>Solution:</summary>
+`SELECT Name FROM Hero WHERE PowerRating = (SELECT MAX(PowerRating) FROM Hero);
+</details>
 
 Problem: Select the number of heros in the database
 
-Solution:
-> SELECT COUNT(*) FROM Hero
+<details>
+<summary>Solution:</summary>
+`SELECT COUNT(*) FROM Hero`
+</details>
 
 Problem: Select the average power of all heros
 
-Solution:
-> SELECT AVG(PowerRating) FROM Hero
+<details>
+<summary>Solution:</summary>
+`SELECT AVG(PowerRating) FROM Hero`
+</details>
 
 Problem: Select the sum of all hero power ratings
 
-Solution:
-> SELECT SUM(PowerRating) FROM Hero
-
+<details>
+<summary>Solution:</summary>
+ `SELECT SUM(PowerRating) FROM Hero`
+</details>
 ## Statement Types
 
 ### Select Distinct
