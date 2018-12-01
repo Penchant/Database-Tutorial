@@ -10,11 +10,11 @@ In order to understand using SELECT statements properly the correct database man
 
 Download and install the sqlite package that matches your operating system. The operating system in use will determine which sqlite package zip file to download and install. Once the zip file has been downloaded, the user must first extract the files from the folder by right clicking the zipped folder icon and selecting the extract all option. A window will pop up asking for the location to extract the files and this will be up to the user on where they would like to keep the file located. The location for the file will need to be added to the path for the installation process to be completed.
 
-To add the files to the path the user must go to the control panel, locate the &#39;environment&#39;. The user will then select edit the system and environment variables. A window will appear and the user will select environment variables. Under the system variables table, select the path variable, then locate and select edit. A new window will appear, this is where the user must click new. This is where the folder location of the sqlite files are located.
+To add the files to the path the user must go to the control panel, locate the 'environment'. The user will then select edit the system and environment variables. A window will appear and the user will select environment variables. Under the system variables table, select the path variable, then locate and select edit. A new window will appear, this is where the user must click new. This is where the folder location of the sqlite files are located.
 
 
 
-Let&#39;s make some selections from an example superhero database.
+Let's make some selections from an example superhero database.
 
  ![Superhero Table]()
 
@@ -34,12 +34,12 @@ We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN,
 Problem: Select all heros in order of their respective power ratings
 
 Solution:
-> SELECT \* FROM Hero ORDER BY PowerRating;
+> SELECT * FROM Hero ORDER BY PowerRating;
 
 Problem: select the top 3 heros from the table
 
 Solution:
-> SELECT TOP 3 \* FROM Hero
+> SELECT TOP 3 * FROM Hero
 
 Problem: Select the name of the hero with the greatest power rating
 
@@ -49,7 +49,7 @@ Solution:
 Problem: Select the number of heros in the database
 
 Solution:
-> SELECT COUNT(\*) FROM Hero
+> SELECT COUNT(*) FROM Hero
 
 Problem: Select the average power of all heros
 
@@ -122,7 +122,7 @@ In SQL, the IS NULL operator is used to test for NULL values. This operators mai
 General Format:
 `SELECT {Columns} FROM {Table} WHERE {Column} IS NULL`
 
-**Select Statement Conditionals: IN**
+### Select Statement Conditionals: IN
 
 Using the IN operator allows for the easy checking of whether a value is in a value set.
 
@@ -141,7 +141,7 @@ The LIKE operator is useful for searching through large rows. It can be utilized
    `SELECT * FROM Customers WHERE {Column} LIKE {Regular Expression}`
     Example:
     `SELECT * FROM Customers WHERE County LIKE 's%'`
-    The above statement returns all customers whose countries start with an &#39;s&#39;.
+    The above statement returns all customers whose countries start with an 's'.
 
 
 
