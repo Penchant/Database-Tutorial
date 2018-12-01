@@ -38,7 +38,7 @@ We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN,
 Problem: Select all heros in order of their respective power ratings
 
 <details>
-<summary>Solution:
+<summary>Solution: </summary>
  SELECT * FROM Hero ORDER BY PowerRating;
 </details>
 Problem: select the top 3 heros from the table
