@@ -18,14 +18,14 @@ Let's make some selections from an example superhero database.
 
  ![Superhero Table](table.png)
 
-Problem: Select each unique power rating from the hero table.
+Problem: Select each unique power rating from the hero table. [Reference](#select-distinct)
 <details>
 <summary> Solution: </summary>
  SELECT DISTINCT PowerRating FROM Hero
 </details>
 <br>
 
-Problem: Select all heros with a power rating of 1
+Problem: Select all heros with a power rating of 1 [Reference](#select-statement-conditionals)
 <details>
 <summary> Solution: </summary>
 SELECT Name FROM Hero WHERE PowerRating = 1;
