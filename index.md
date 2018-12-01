@@ -22,7 +22,7 @@ Problem: Select each unique power rating from the hero table.
 
 
 Solution:
-> SELECT DISTINCT PowerRating FROM Hero
+>! SELECT DISTINCT PowerRating FROM Hero
 
 Problem: Select all heros with a power rating of 1
 
