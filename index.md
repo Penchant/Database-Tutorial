@@ -67,7 +67,7 @@ SELECT AVG(PowerRating) FROM Hero
 </details>
 
 
-Problem: Select the sum of all hero power ratings
+Problem: Select the sum of all hero power ratings [Reference](#select-sum)
 <details>
 <summary>Solution:</summary>
  SELECT SUM(PowerRating) FROM Hero
@@ -80,7 +80,7 @@ Problem: Select the sum of all hero power ratings
 When running queries against the database, a common issue can be that multiple identical rows are returned when only unique entries are desired to be returned from the query. This is issue is resolved in SQL with the SELECT DISTINCT statement, which returns only distinct values.
 
  General Format:   
-  ` SELECT DISTINCT {Column} FROM {Table} `
+`SELECT DISTINCT {Column} FROM {Table}`
   <br>
   Example: 
   `SELECT DISTINCT Country FROM Customers`
@@ -242,7 +242,7 @@ Example:
 <br>
 This statement allows the number of customers from the USA to be returned.
 
-### SELECT AVG(column)
+### SELECT AVG
 
 Using a numeric based column only, the average can be achieved using the syntax of AVG().
 
@@ -254,7 +254,7 @@ Using a numeric based column only, the average can be achieved using the syntax 
    <br>
    This statement returns the average of sales across all customers.
 
-### SELECT SUM(column)
+### SELECT SUM
 
 The SUM keyword allows the summation of the values in a column.
 
@@ -274,8 +274,7 @@ Sometimes a column or table in SQL need a temporary name change for accessing a 
    `SELECT {columnName} AS {aliasName} FROM {tableName}`
    <br>
    Example:   
-     `SELECT CustomerID AS ID, CustomerName FROM Customers`
-     `WHERE ID = "100"`
+     `SELECT CustomerID AS ID, CustomerName FROM Customers WHERE ID = "100"`
      <br>
      This statement selects the id and name of the customer with id 100 with the alias referencing the CustomerID column as simply ID in the WHERE clause.
 
@@ -284,15 +283,14 @@ Sometimes a column or table in SQL need a temporary name change for accessing a 
 In SQL  the INNER JOIN keywords selects data from different tables with matching values.
 
  General Format:   
- `SELECT {columnName} FROM {FirstTable} INNER JOIN {SecondTable} ON` `{FirstTable.columnName} = {SecondTable.columnName}`
+ `SELECT {columnName} FROM {FirstTable} INNER JOIN {SecondTable} ON {FirstTable.columnName} = {SecondTable.columnName}`
 <br>
  Example:   
- `SELECT * FROM Customers`
- `INNER JOIN VIPCustomers ON Customers.ID = VIPCustomers.ID`
+ `SELECT * FROM Customers INNER JOIN VIPCustomers ON Customers.ID = VIPCustomers.ID`
 <br>
  This statement returns all the records in the Customers table where a matching id was found in the VIPCustomers table.
 
-### SELECT (column) FROM (table) GROUP BY (column)
+### Group By
 
 When working data it can at times be useful to group the results by a particular column.
 
@@ -314,8 +312,7 @@ At times, conditionals on grouped data can be desirable, that is using condition
  `SELECT {Columns} FROM {Tables} GROUP BY {Column} HAVING {Condition}`
  <br>
  Example:   
- `SELECT Country FROM Customers GROUP BY Country`
- `HAVING SUM(Sales) > 1,000,000`
+ `SELECT Country FROM Customers GROUP BY Country HAVING SUM(Sales) > 1,000,000`
  <br>
  The above statement allows the selection of countries where the total sales from customers in that country is over 1,000,000.
 
