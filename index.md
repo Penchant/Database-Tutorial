@@ -81,8 +81,10 @@ When running queries against the database, a common issue can be that multiple i
 
  General Format:   
   ` SELECT DISTINCT {Column} FROM {Table} `
-  Example:   
+  <br>
+  Example: 
   `SELECT DISTINCT Country FROM Customers`
+  <br>
   The above statement allows a query to be made to find all the unique countries that customers are from in easily viewable manner; manually scanning the results for unique entries when there could easily be thousands of results would be quite cumbersome.
 
 ### Select Statement Conditionals
@@ -91,8 +93,10 @@ When using SELECT statements it can often be useful to only grab certain rows fr
 
  General Format:   
  `SELECT {Column} FROM {Table} WHERE {Condition}`
+ <br>
  Example:   
  `SELECT * FROM Customers WHERE Country = "USA"`
+ <br>
  By running the above statement, customers from the country USA are returned.
 
 In addition to checking if a property matches a particular value, SELECT statements have a variety of conditional operators which include: AND, OR, NOT, IS NULL, LIKE, IN, and BETWEEN.
@@ -103,8 +107,10 @@ The AND operator in SQL allows logical statements to be modified such that in or
 
  General Format:   
  `SELECT {Columns} FROM {Tables} WHERE {Condition1} AND {Condition2}`
+ <br>
  Example:   
  `SELECT * From Customers WHERE Country = "USA" AND Sales > 500`
+ <br>
  The AND operator allows the selection of customers from the USA with sales of at least 500 with that customer.
 
 ### Select Statement Conditionals: OR
@@ -113,9 +119,12 @@ The OR operator in SQL allows logical statements to be modified such that in ord
 
  General Format:   
   `SELECT {Column} FROM {Table} WHERE {Condition1} OR {Condition2}`
+  <br>
   Example:    
    `SELECT * FROM Customers WHERE Country = "USA" OR Sales > 500`
+<br>
    This will select all customers who are located in the USA or who have sales greater than 500.
+
 
 ### Select Statement Conditionals: NOT
 
@@ -123,8 +132,10 @@ The NOT operator in SQL functions as a logical negation.
 
  General Format:   
    `SELECT {Column} FROM {Table} WHERE {item1} NOT {item2}`
+   <br>
    Example:   
      `SELECT * FROM Customers WHERE Country NOT "USA"`
+<br>
      The example above takes the entire set of customers were they are not from USA.
 
 ### Select Statement Conditionals: IS NULL
@@ -140,9 +151,11 @@ Using the IN operator allows for the easy checking of whether a value is in a va
 
  General Format:   
   `SELECT {Columns} FROM {Tables} WHERE {Value} IN {Value Set}`
+   <br>
    Example:   
    `SELECT * FROM Customers Where Id IN`
    `(SELECT Id From VIPCustomers WHERE Country = "USA")`    
+   <br>
    The above select statement allows the easy selection of customers where they are a VIP customer from the USA. The VIPCustomers table might only track a small amount of information about the customer compared to the regular customers table, thus the benefit of grabbing these customers from the Customers table by referencing the VIPCustomers table.
 
 ### Select Statement Conditionals: LIKE
@@ -151,8 +164,10 @@ The LIKE operator is useful for searching through large rows. It can be utilized
 
  General Format:   
    `SELECT * FROM Customers WHERE {Column} LIKE {Regular Expression} `
+    <br>
     Example:   
     `SELECT * FROM Customers WHERE County LIKE 's%'`
+    <br>
     The above statement returns all customers whose countries start with an 's'.
 
 
@@ -163,18 +178,22 @@ To find information within a specific range the BETWEEN operator is used. The va
 
  General Format:   
  `SELECT {Columns} FROM {Tables} WHERE {Column} BETWEEN {Value1} AND {Value2}`
+ <br>
  Example:   
  `SELECT * FROM Customers WHERE Sales BETWEEN 500 AND 1000`
+ <br>
  The above example selects all customers where sales are between 500 and 1000.
 
 ### ORDER BY
 
-ORDER BY is a keyword that is used to sort data in ascending to descending order. The ascending order is always the default sorting technique used by ORDER BY. when the descending order in needed the specifier of DESC must be implemented at the end of the query. However, the method to use ascending and then descending order is described by placing ASC|DEAC at the end of the query. Where ASC is the signifier for ascending order.
+ORDER BY is a keyword that is used to sort data in ascending to descending order. The ascending order is always the default sorting technique used by ORDER BY. when the descending order in needed the specifier of DESC must be implemented at the end of the query. However, the method to use ascending and then descending order is described by placing ASC or DEAC at the end of the query. Where ASC is the signifier for ascending order.
 
  General Format:   
   `SELECT {Columns} FROM {Table} ORDER BY {Column} {ASC|DEAC}`
+  <br>
   Example:   
     `SELECT * FROM Customers ORDER BY Sales DEAC`
+    <br>
     This will select all the customers, ordered by sales in descending order.
 
 ### SELECT TOP(number)
@@ -183,8 +202,10 @@ Often times it is desirable to only select the beginning of a list, which can be
 
  General Format:   
  `SELECT TOP {Number} FROM {Tables}`
+<br>
  Example:   
  `SELECT TOP 10 FROM Customers ORDER BY Sales`
+ <br>
  Selecting the top 10 customers by sales is able to be done with the above statement.
 
 ### SELECT MIN(column)|MAX(column)
@@ -193,16 +214,20 @@ MIN() returns the smallest value in the selected column
 
  General Format:   
  `SELECT MIN({columnName}) FROM {tableName}`
+  <br>
   Example:   
     `SELECT MIN(Rating) FROM reviews`
+    <br>
     In the example for MIN, MIN is used to find the smallest rating in the review table.
 
 MAX() returns the largest value in the selected column:
 
  General Format:   
  `SELECT MAX({columnName}) FROM {tableName}`
+ <br>
  Example:   
   `SELECT MAX(Rating) FROM reviews`
+ <br>
   In the example above MAX is used to find the largest rating in the review table.
 
 ### SELECT COUNT(column)
@@ -211,8 +236,10 @@ When looking at data it can often be helpful to know how many occurrences there 
 
 General Format:   
 `SELECT COUNT({Columns}) FROM {Tables}`
+<br>
 Example:   
 `SELECT COUNT(*) FROM Customers WHERE Country = "USA"`
+<br>
 This statement allows the number of customers from the USA to be returned.
 
 ### SELECT AVG(column)
@@ -221,8 +248,10 @@ Using a numeric based column only, the average can be achieved using the syntax 
 
  General Format:   
  `SELECT AVG{Column} FROM {Tables}`
+ <br>
  Example:   
    `SELECT AVG Sales FROM Customers`
+   <br>
    This statement returns the average of sales across all customers.
 
 ### SELECT SUM(column)
@@ -231,30 +260,36 @@ The SUM keyword allows the summation of the values in a column.
 
  General Format:   
  `SELECT SUM({Column}) FROM {Tables}`
+ <br>
  Example:   
  `SELECT SUM(Sales) FROM Customers WHERE Country = "USA"`
+ <br>
  This statement returns the total sales from all US Customers.
 
-**SELECT (column) AS (Alias\_Name) FROM (Table)**
+### SELECT Statement Aliasing
 
 Sometimes a column or table in SQL need a temporary name change for accessing a database with an easier to use name. This can be performed through aliasing. Aliasing can be used to protect the real name of the database fields. The aliasing name is temporarily instated for the duration of the query. Aliasing is commonly used to make the names more readable as correlation names.
 
  General Format:   
    `SELECT {columnName} AS {aliasName} FROM {tableName}`
+   <br>
    Example:   
      `SELECT CustomerID AS ID, CustomerName FROM Customers`
      `WHERE ID = "100"`
+     <br>
      This statement selects the id and name of the customer with id 100 with the alias referencing the CustomerID column as simply ID in the WHERE clause.
 
-**SELECT (table1.column) FROM (table1) INNER JOIN (table2) ON (column)**
+### SELECT Statement INNER JOIN
 
 In SQL  the INNER JOIN keywords selects data from different tables with matching values.
 
  General Format:   
  `SELECT {columnName} FROM {FirstTable} INNER JOIN {SecondTable} ON` `{FirstTable.columnName} = {SecondTable.columnName}`
+<br>
  Example:   
  `SELECT * FROM Customers`
  `INNER JOIN VIPCustomers ON Customers.ID = VIPCustomers.ID`
+<br>
  This statement returns all the records in the Customers table where a matching id was found in the VIPCustomers table.
 
 ### SELECT (column) FROM (table) GROUP BY (column)
@@ -263,8 +298,10 @@ When working data it can at times be useful to group the results by a particular
 
  General Format:   
  `SELECT {Columns} FROM {Tables} GROUP BY {Column}`
+ <br>
  Example:   
  `SELECT SUM(Sales), Country FROM Customers GROUP BY Country`
+ <br>
  The above statement allows the total sales for each country's customers to be returned.
 
 
@@ -275,9 +312,11 @@ At times, conditionals on grouped data can be desirable, that is using condition
 
  General Format:   
  `SELECT {Columns} FROM {Tables} GROUP BY {Column} HAVING {Condition}`
+ <br>
  Example:   
  `SELECT Country FROM Customers GROUP BY Country`
  `HAVING SUM(Sales) > 1,000,000`
+ <br>
  The above statement allows the selection of countries where the total sales from customers in that country is over 1,000,000.
 
 ### Exists
@@ -286,7 +325,9 @@ Often times knowing whether a value exists in a value set can be quite useful an
 
  General Format:   
  `SELECT {Columns} FROM {Tables} WHERE EXISTS (SELECT {Columns} FROM {Tables} WHERE {Condition})`
+ <br>
  Example:   
  `SELECT demand FROM consumer`
  `WHERE EXISTS (SELECT item FROM sales WHERE stock= "empty")`
+ <br>
  The EXISTS example seen is using the data where the stock of an item marked under consumer demand is empty.
