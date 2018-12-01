@@ -22,14 +22,15 @@ Problem: Select each unique power rating from the hero table.
 
 <details>
 <summary> Solution: </summary>
- SELECT DISTINCT PowerRating FROM Hero
+ `SELECT DISTINCT PowerRating FROM Hero`
 </details>
 
 Problem: Select all heros with a power rating of 1
 
-Solution:
-> SELECT Name FROM Hero WHERE PowerRating = 1;
-
+<details>
+<summmary> Solution: </summary>
+`SELECT Name FROM Hero WHERE PowerRating = 1;`
+</details>
 We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN, and BETWEEN statements.
 
 Problem: Select all heros in order of their respective power ratings
