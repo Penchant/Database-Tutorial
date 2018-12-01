@@ -23,55 +23,58 @@ Problem: Select each unique power rating from the hero table.
 <summary> Solution: </summary>
  SELECT DISTINCT PowerRating FROM Hero
 </details>
+<br>
 
 Problem: Select all heros with a power rating of 1
 <details>
 <summary> Solution: </summary>
 SELECT Name FROM Hero WHERE PowerRating = 1;
 </details>
-
+<br>
 
 We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN, and BETWEEN statements.
 
-Problem: Select all heros in order of their respective power ratings
+Problem: Select all heros in order of their respective power ratings [Reference](#order-by)
 <details>
 <summary>Solution: </summary>
  SELECT * FROM Hero ORDER BY PowerRating;
 </details>
+<br>
 
-Problem: select the top 3 heros from the table
+Problem: select the top 3 heros from the table [Reference](#select-top)
 <details>
 <summary>Solution:</summary>
  SELECT TOP 3 * FROM Hero
 </details>
+<br>
 
-
-Problem: Select the name of the hero with the greatest power rating
+Problem: Select the name of the hero with the greatest power rating [Reference](#select-min-or-max)
 <details>
 <summary>Solution:</summary>
 SELECT Name FROM Hero WHERE PowerRating = (SELECT MAX(PowerRating) FROM Hero);
 </details>
+<br>
 
-
-Problem: Select the number of heros in the database
+Problem: Select the number of heros in the database [Reference](#select-count)
 <details>
 <summary>Solution:</summary>
 SELECT COUNT(*) FROM Hero
 </details>
+<br>
 
-
-Problem: Select the average power of all heros
+Problem: Select the average power of all heros [Reference](#select-avg)
 <details>
 <summary>Solution:</summary>
 SELECT AVG(PowerRating) FROM Hero
 </details>
-
+<br>
 
 Problem: Select the sum of all hero power ratings [Reference](#select-sum)
 <details>
 <summary>Solution:</summary>
  SELECT SUM(PowerRating) FROM Hero
 </details>
+<br>
 
 ## Statement Types
 
@@ -196,7 +199,7 @@ ORDER BY is a keyword that is used to sort data in ascending to descending order
     <br>
     This will select all the customers, ordered by sales in descending order.
 
-### SELECT TOP(number)
+### SELECT TOP
 
 Often times it is desirable to only select the beginning of a list, which can be done in SQL with the SELECT TOP statement that returns up to the number passed.
 
@@ -208,7 +211,7 @@ Often times it is desirable to only select the beginning of a list, which can be
  <br>
  Selecting the top 10 customers by sales is able to be done with the above statement.
 
-### SELECT MIN(column)|MAX(column)
+### SELECT MIN and MAX
 
 MIN() returns the smallest value in the selected column
 
@@ -230,7 +233,7 @@ MAX() returns the largest value in the selected column:
  <br>
   In the example above MAX is used to find the largest rating in the review table.
 
-### SELECT COUNT(column)
+### SELECT COUNT
 
 When looking at data it can often be helpful to know how many occurrences there are of something, which is completed through using the SELECT COUNT statement.
 
