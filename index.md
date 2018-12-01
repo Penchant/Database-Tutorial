@@ -22,55 +22,55 @@ Problem: Select each unique power rating from the hero table.
 
 <details>
 <summary> Solution: </summary>
- `SELECT DISTINCT PowerRating FROM Hero`
+ SELECT DISTINCT PowerRating FROM Hero
 </details>
 
 Problem: Select all heros with a power rating of 1
 <details>
 <summmary> Solution: </summary>
-`SELECT Name FROM Hero WHERE PowerRating = 1;`
+SELECT Name FROM Hero WHERE PowerRating = 1;
+</details>
 
 We could create more complex conditionals using AND, OR, NOT, IS NULL, LIKE, IN, and BETWEEN statements.
-</details>
 
 Problem: Select all heros in order of their respective power ratings
 <details>
 <summary>Solution:
- `SELECT * FROM Hero ORDER BY PowerRating;`
+ SELECT * FROM Hero ORDER BY PowerRating;
 </details>
 Problem: select the top 3 heros from the table
 
 <details>
 <summary>Solution:</summary>
- `SELECT TOP 3 * FROM Hero`
+ SELECT TOP 3 * FROM Hero
 </details>
 
 Problem: Select the name of the hero with the greatest power rating
 
 <details>
 <summary>Solution:</summary>
-`SELECT Name FROM Hero WHERE PowerRating = (SELECT MAX(PowerRating) FROM Hero);
+SELECT Name FROM Hero WHERE PowerRating = (SELECT MAX(PowerRating) FROM Hero);
 </details>
 
 Problem: Select the number of heros in the database
 
 <details>
 <summary>Solution:</summary>
-`SELECT COUNT(*) FROM Hero`
+SELECT COUNT(*) FROM Hero
 </details>
 
 Problem: Select the average power of all heros
 
 <details>
 <summary>Solution:</summary>
-`SELECT AVG(PowerRating) FROM Hero`
+SELECT AVG(PowerRating) FROM Hero
 </details>
 
 Problem: Select the sum of all hero power ratings
 
 <details>
 <summary>Solution:</summary>
- `SELECT SUM(PowerRating) FROM Hero`
+ SELECT SUM(PowerRating) FROM Hero
 </details>
 ## Statement Types
 
